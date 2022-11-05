@@ -1,15 +1,15 @@
-import css from './App.module.css';
+import css from 'components/App.module.css';
 
-const ContactList = ({ contacts, onDeleteContact }) => {
+export const ContactList = ({ contacts, onDeleteContact }) => {
   return (
-    <ul className={css.contact__list}>
+    <ul className={css.contactList}>
       {contacts.map(contact => (
-        <li className={css.contact__item} key={contact.id}>
+        <li className={css.contactItem} key={contact.id}>
           <p>
             {contact.name}: <span>{contact.number}</span>
           </p>
           <button
-            className={css.contact__button}
+            className={css.contactButton}
             type="button"
             onClick={() => onDeleteContact(contact.id)}
           >
@@ -20,5 +20,3 @@ const ContactList = ({ contacts, onDeleteContact }) => {
     </ul>
   );
 };
-
-export default ContactList;

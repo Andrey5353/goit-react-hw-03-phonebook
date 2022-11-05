@@ -1,14 +1,17 @@
-import css from './App.module.css';
+import css from 'components/App.module.css';
 
-const Filter = ({ value, onChange }) => {
+export const Filter = ({ value, onChange }) => {
   return (
     <div className={css.form}>
-      <label className={css.form__label}>
+      <label className={css.formLabel}>
         Find contacts by name
-        <input name="name" value={value} onChange={onChange}></input>
+        <input
+          className={css.formInput}
+          name="name"
+          value={value}
+          onChange={onChange}
+        ></input>
       </label>
     </div>
   );
 };
-
-export default Filter;

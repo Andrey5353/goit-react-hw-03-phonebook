@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ContactForm from './ContactForm';
-import ContactList from './ContactList';
-import Filter from './Filter';
+import { ContactForm } from 'components/ContactForm';
+import { ContactList } from 'components/ContactList';
+import { Filter } from 'components/Filter';
 import { nanoid } from 'nanoid';
-import css from './App.module.css';
+import css from 'components/App.module.css';
 
-class App extends Component {
+export class App extends Component {
   state = {
     contacts: [],
     filter: '',
@@ -56,20 +56,20 @@ class App extends Component {
   render() {
     return (
       <section className={css.phonebook}>
-        <div className={css.phonebook__wrap}>
-          <h1 className={css.phonebook__title}>Phonebook</h1>
+        <div className={css.phonebookWrap}>
+          <h1 className={css.phonebookTitle}>Phonebook</h1>
           <ContactForm onSubmit={this.addContact} />
         </div>
 
-        <div className={css.contacts__wrap}>
-          <h2 className={css.phonebook__title}>Contacts</h2>
+        <div className={css.contactsWrap}>
+          <h2 className={css.phonebookTitle}>Contacts</h2>
           <Filter value={this.state.filter} onChange={this.changeFilter} />
-        </div>
 
-        <ContactList
-          contacts={this.getFiltredContacts()}
-          onDeleteContact={this.deleteContact}
-        />
+          <ContactList
+            contacts={this.getFiltredContacts()}
+            onDeleteContact={this.deleteContact}
+          />
+        </div>
       </section>
     );
   }
@@ -81,5 +81,3 @@ App.propTypes = {
     filter: PropTypes.string.isRequired,
   }),
 };
-
-export default App;

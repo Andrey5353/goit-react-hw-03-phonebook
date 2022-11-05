@@ -1,60 +1,81 @@
 .phonebook {
+  display: flex;
+  flex-direction: column;
   padding: 30px;
-  background-color: linear-gradient(to bottom, #c9d6ff, #e2e2e2);
-  /* box-shadow: 0px 4px 10px 4px #9e9e9e; */
+  min-width: 300px;
+
+  background-color: #525252;
+  border-radius: 8px;
+  box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.3);
 }
 
-.phonebook__wrap {
-  display: inline-block;
+.phonebookWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 30px;
-  box-shadow: 0px 4px 10px 4px #9e9e9e;
-}
+  min-width: 240px;
 
-.phonebook__title {
-  padding-left: 20px;
+  border-radius: 8px;
+  box-shadow: inset 0 0 10px 5px rgb(160, 160, 160);
 }
 
 .form {
-  padding: 20px;
   display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 30px;
   gap: 30px;
   align-items: flex-end;
 }
 
-.form__label {
+.formLabel {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   width: 200px;
 }
 
-.form__button {
+.formInput {
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #ffb579;
+}
+
+.formButton {
   width: 200px;
   height: 35px;
 }
 
-.contacts__wrap {
+.contactContainer {
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.contactsWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 30px;
 }
 
-.contact__list {
-  display: inline-flex;
+.contactList {
+  display: flex;
   flex-direction: column;
   gap: 10px;
-  min-width: 300px;
 }
 
-.contact__item {
-  display: inline-flex;
-  gap: 10px;
+.contactItem {
+  display: flex;
   align-items: baseline;
   justify-content: space-between;
   padding-left: 30px;
   min-width: 300px;
-  box-shadow: 0px 4px 10px 4px #9e9e9e;
-  border-radius: 3px;
+  max-width: 600px;
+
+  border-radius: 4px;
+  box-shadow: inset 0 0 10px 5px rgb(160, 160, 160);
 }
 
-.contact__button {
-  margin-left: 30px;
+.contactButton {
+  margin-left: 10px;
 }

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import css from './App.module.css';
+import css from 'components/App.module.css';
 
 const INITIAL_STATE = {
   name: '',
   number: '',
 };
 
-class ContactForm extends Component {
+export class ContactForm extends Component {
   state = { ...INITIAL_STATE };
 
   onFormChange = event => {
@@ -32,9 +32,10 @@ class ContactForm extends Component {
     const { name, number } = this.state;
     return (
       <form className={css.form} onSubmit={this.onFormSubmit}>
-        <label className={css.form__label}>
+        <label className={css.formLabel}>
           Name
           <input
+            className={css.formInput}
             value={name}
             onChange={this.onFormChange}
             type="text"
@@ -44,9 +45,10 @@ class ContactForm extends Component {
             required
           />
         </label>
-        <label className={css.form__label}>
+        <label className={css.formLabel}>
           Number
           <input
+            className={css.formInput}
             value={number}
             onChange={this.onFormChange}
             type="tel"
@@ -56,7 +58,7 @@ class ContactForm extends Component {
             required
           />
         </label>
-        <button className={css.form__button} type="submit">
+        <button className={css.formButton} type="submit">
           Add contact
         </button>
       </form>
@@ -64,9 +66,9 @@ class ContactForm extends Component {
   }
 }
 
-INITIAL_STATE.propTypes = {
-  name: PropTypes.number.isRequired,
-  number: PropTypes.number.isRequired,
+ContactForm.propTypes = {
+  state: PropTypes.shape({
+    name: PropTypes.number.isRequired,
+    number: PropTypes.number.isRequired,
+  }),
 };
-
-export default ContactForm;
